@@ -43,7 +43,7 @@ void main() {
 	}
 	cout << "\nМинимальное значение: " << min << endl;
 	cout << "Максимальное значение: " << max << endl;
-	int tmp=ourArr[iMax];
+	int tmp = ourArr[iMax];
 	ourArr[iMax] = ourArr[iMin];
 	ourArr[iMin] = tmp;
 	cout << "Массив с перестановкой максимальногои минимального значений:\n";
@@ -59,26 +59,24 @@ void main() {
 		cout << "Произведение элементов равно: " << product << endl;
 	}
 	int k = SIZE - 1;
-	int flag = true;
-	while (k > 0 && flag)
+	
+	while (k > 0 )
 	{
-		int endI = -1;
-		flag = false;
+		int endI = -1;		
 		for (int i = 0; i < k; i++)
 			if (ourArr[i] > ourArr[i + 1]) {
 				int tmp = ourArr[i];
 				ourArr[i] = ourArr[i + 1];
-				ourArr[i + 1] = tmp;
-				flag = true;
+				ourArr[i + 1] = tmp;				
 				endI = i;
 			}
 		k = endI;
 	}
-	cout << "Итоговый массив:\n" ;
+	cout << "Итоговый массив:\n";
 	printOurArr(ourArr, SIZE); // Вызов функции вывода массива
 	system("pause");
 }
-void printOurArr(int a[], int size) 
+void printOurArr(int a[], int size)
 {
 	for (int i = 0; i < size; i++) {
 		cout << a[i] << " ";
